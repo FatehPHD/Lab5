@@ -2,7 +2,7 @@
 =========================================================
 Name        : lab5_exe_C.html
 Assignment  : Lab 5, Exercise C
-Author(s)   : Mahdi Ansari, William Arthur Philip Louis
+Author(s)   : Fateh Syed Bukhari, Hasnain Haider
 Submission  : May 21, 2030
 Description : DOM Elements.
 =========================================================
@@ -206,34 +206,81 @@ Description : DOM Elements.
 		<script>
 			document.addEventListener('DOMContentLoaded', function afterRender() {
 				// Task 1: Set the text content of all elements with the class 'companyName' and remove their border
+				var companyObjects = document.getElementsByClassName('companyName');
+
+				for (var i = 0; i < companyObjects.length; i++) {
+					companyObjects[i].textContent = 'Fateh Bukhari';
+
+					companyObjects[i].style.border = 'none';
+				}
+
 
 
 				// Task 2: Change the background color of the navigation bar
+				var taskbar = document.querySelector('nav');
+
+				taskbar.style.backgroundColor = 'pink'
+
+
 				
 
 				// Task 3: Hide the section titled 'What is full-stack?'
+				document.querySelector('article h2').style.display = "none";
+				document.querySelector('article p').style.display = "none";
+
+
 
 
 				// Task 4: Create a new <p> element and append it to the 'About Us' section
+				var newp = document.createElement('p');
+				newp.textContent = 'This is a new paragraph.';
+				newp.style.color = 'red';
+				var aboutUs = document.querySelector('section p:last-child');
+				aboutUs.appendChild(newp);
+
 
 
 				// Task 5: Add placeholders to input elements based on their corresponding label IDs
+
+				var name = document.getElementById('name');
+				var message = document.getElementById('message');
+				var email = document.getElementById('email');
+
+
+
+
+				name.setAttribute('placeholder', 'name');
+				email.setAttribute('placeholder', 'email');
+				message.setAttribute('placeholder', 'message');
+				
+
+
 
 
 				// Task 6: Set the src attribute of the image
 
 
+
+
 				// Task 7: Add a new item in the navigation menu
+
+
+
 
 
 				// Task 8: Change the submit button text upon clicking and make it disabled
 
 
+
+
 				// Task 9: Change the text color of each item in the 'Related Links' to green
 
 
+
+
+
 				// Task 10: Add a red solid border to the footer
-			});
+				});
 		</script>
 	</body>
 </html>
