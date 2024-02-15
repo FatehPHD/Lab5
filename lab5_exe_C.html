@@ -3,7 +3,7 @@
 Name        : lab5_exe_C.html
 Assignment  : Lab 5, Exercise C
 Author(s)   : Fateh Syed Bukhari, Hasnain Haider
-Submission  : May 21, 2030
+Submission  : Feb 14, 2024
 Description : DOM Elements.
 =========================================================
 -->
@@ -246,40 +246,48 @@ Description : DOM Elements.
 				var message = document.getElementById('message');
 				var email = document.getElementById('email');
 
-
-
-
 				name.setAttribute('placeholder', 'name');
 				email.setAttribute('placeholder', 'email');
 				message.setAttribute('placeholder', 'message');
 				
-
-
-
-
 				// Task 6: Set the src attribute of the image
-
+				var pic = document.querySelector('section img');
+				pic.src = './images/example.svg';
 
 
 
 				// Task 7: Add a new item in the navigation menu
+				var navbar = document.querySelector('nav ul');
+				var newitem = document.createElement('li');
+				var newa = document.createElement('a');
+				newa.href = '#';
+				newa.textContent = 'Blog';
 
-
-
+				newitem.appendChild(newa);
+				navbar.append(newitem);
 
 
 				// Task 8: Change the submit button text upon clicking and make it disabled
 
-
-
+				var subButton = document.querySelector('input[type="button"]');
+				if(subButton) {
+	 			subButton.addEventListener('click', function() {
+	 			this.value = 'Submitted';
+	 			this.disabled = true;
+	 			});
+ 				};
 
 				// Task 9: Change the text color of each item in the 'Related Links' to green
-
-
-
+				var x = document.querySelectorAll('aside ul a');
+				x.forEach(function(link){
+					link.setAttribute('style', 'color:green');
+				});
 
 
 				// Task 10: Add a red solid border to the footer
+				var footer_border = document.querySelector('footer');
+				footer_border.setAttribute('style', 'border: 2px solid red');
+	
 				});
 		</script>
 	</body>
